@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    background: #f7f7f5;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100dvh;
+    background: #f7f7f5;
+    color: #000;
+  }
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.stage {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  overflow: hidden;
+  background: #f7f7f5;
+}
+
+.hero {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2816 / 1250;
+  isolation: isolate;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero__artwork {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.automation-toggle {
+  position: absolute;
+  top: 58.05%;
+  left: 6.34%;
+  z-index: 1;
+  display: grid;
+  width: 8.75%;
+  height: 13.18%;
+  place-items: center;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: rgb(229 229 229 / 96%);
+  color: #787878;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5.55cqw;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.automation-toggle:hover {
+  background: rgb(214 214 214 / 98%);
+  color: #4b4b4b;
+}
+
+.automation-toggle:focus-visible {
+  outline: max(2px, 0.18cqw) solid #00d9ff;
+  outline-offset: max(2px, 0.16cqw);
+  box-shadow:
+    0 0 0 max(3px, 0.26cqw) #fff,
+    0 0 max(16px, 1.8cqw) max(2px, 0.3cqw) rgb(0 217 255 / 72%);
+}
+
+.automation-toggle[aria-pressed="false"] {
+  background: rgb(45 45 45 / 94%);
+  color: #fff;
+  font-size: 4.45cqw;
+  letter-spacing: -0.07em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-aspect-ratio: 2816 / 1250) {
+  .hero {
+    width: 100vw;
+  }
+}
+
+@media (min-aspect-ratio: 2816 / 1250) {
+  .hero {
+    width: auto;
+    height: 100dvh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .automation-toggle {
+    transition: none;
+  }
+}
