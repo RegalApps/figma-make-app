@@ -1,1 +1,10 @@
-{}
+{
+  "description": "Connects to GitHub to publish projects to a repository, helping developers share and manage their code.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
